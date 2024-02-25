@@ -1,0 +1,42 @@
+.h-navbar, .h-footer {
+  height: 10vh;
+}
+
+.nav-bar {
+  box-shadow: 0px 0px 100px black;
+  position: fixed;
+  z-index: 1;
+}
+
+.gradient {
+  background: rgb(242,109,61);
+  background: linear-gradient(90deg, rgba(242,109,61,1) 0%, rgba(54,200,217,1) 50%, rgba(242,186,82,1) 100%);
+}
+
+.logo-font {
+  font-family: "Protest Revolution", sans-serif;  
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1em;
+}
+
+.padd-header {
+  padding-top: 10vh;
+}
+
+.h-line {
+  height: 1.5vh;
+}
+
+.hover-card:hover {
+  border-width: .1em;
+  border-color: rgba(54,200,217,1);
+}
+
+@media (min-width: 576px) {
+
+  .logo-font, .fa-cat {
+    font-size: 2em;
+  }
+
+}
