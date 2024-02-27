@@ -68,15 +68,155 @@
   <div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop"
     aria-labelledby="staticBackdropLabel">
     <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="staticBackdropLabel">Filtrar</h5>
+      <div class="col text-center text-white text-decoration-underline">
+        <div class="rounded-pill gradient">
+          <span class="logo-font fst-italic">Adopt</span> <i class="fa-solid fa-cat"></i><span
+            class="logo-font fst-italic">me</span>
+        </div>
+      </div>
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
+
+
+
     <div class="offcanvas-body">
-      <div>
-        ...
+
+      <!-- form-check-radio GÉNERO -->
+      <div class="row ms-1">
+        <p class="text-decoration-underline fw-bold">Género</p>
+        <div class="col">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+            <label class="form-check-label" for="flexRadioDefault1">
+              Hembra
+            </label>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+            <label class="form-check-label" for="flexRadioDefault2">
+              Macho
+            </label>
+          </div>
+        </div>
       </div>
+      <hr />
+
+      <!-- form-select EDAD -->
+      <div class="row ms-1">
+        <p class="text-decoration-underline fw-bold">Edad</p>
+        <div class="col">
+          <select class="form-select" aria-label="Default select example">
+            <option selected>Edad min</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+        </div>
+        <div class="col">
+          <select class="form-select" aria-label="Default select example">
+            <option selected>Edad max</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+        </div>
+      </div>
+      <hr />
+
+      <!-- form-select COLOR -->
+      <div class="row ms-1">
+        <p class="text-decoration-underline fw-bold">Color</p>
+        <div class="col">
+          <select class="form-select" aria-label="Default select example">
+            <option selected>Elige...</option>
+            <option value="1">Blanco</option>
+            <option value="2">Negro</option>
+            <option value="3">Marrón</option>
+          </select>
+        </div>
+      </div>
+      <hr />
+
+      <!-- form-check-checkbox RAZA -->
+      <div class="row ms-1">
+        <p class="text-decoration-underline fw-bold">Raza</p>
+        <div class="col">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
+            <label class="form-check-label" for="flexCheckDefault">
+              Todas las razas
+            </label>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row ms-1">
+        <div class="col">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              Raza 1
+            </label>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              Raza 2
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="row ms-1">
+        <div class="col">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              Raza 3
+            </label>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              Raza 4
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="row ms-1">
+        <div class="col">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              Raza 5
+            </label>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              Raza 6
+            </label>
+          </div>
+        </div>
+      </div>
+
+    
     </div>
+  
+  
+  
   </div>
+
+
 
   <script src="js/app.js"></script>
   <script src="js/db.js"></script>

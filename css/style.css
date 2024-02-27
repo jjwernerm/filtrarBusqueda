@@ -1,5 +1,5 @@
 .h-navbar, .h-footer {
-  height: 10vh;
+  height: 15vh;
 }
 
 .nav-bar {
@@ -21,7 +21,7 @@
 }
 
 .padd-header {
-  padding-top: 10vh;
+  padding-top: 15vh;
 }
 
 .h-line {
@@ -31,6 +31,10 @@
 .hover-card:hover {
   border-width: .1em;
   border-color: rgba(54,200,217,1);
+}
+
+.bg-card-hover:hover {
+  background-color: #e5e7eb;
 }
 
 @media (min-width: 576px) {

@@ -13,8 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Retorno una plantilla HTML con los datos del gato.
     return `
       <div class="col-12 col-sm-6 d-flex justify-content-center">
-        <div class="card mb-3 btn text-start shadow p-3 mb-5 bg-body-tertiary rounded hover-card" style="max-width: 540px;">
-          <div class="row g-0">        
+        <div class="card mb-3 btn text-start shadow mb-5 bg-body-tertiary rounded hover-card" style="max-width: 540px;">
+          <div class="row g-0 rounded bg-card-hover">        
             <div class="col-md-4">
               <img src="${img}" class="img-fluid rounded" alt="...">
             </div>        
