@@ -29,7 +29,7 @@ const cats = [
     age: 3,
     gender: 'Macho',
     img: 'https://res.cloudinary.com/dqjnzfsp6/image/upload/v1708818206/turkish-white.jpg',
-    race: 'Van Turco',
+    race: 'Van-Turco',
   },
   {
     name: 'Kira',
@@ -37,7 +37,7 @@ const cats = [
     age: 2,
     gender: 'Hembra',
     img: 'https://res.cloudinary.com/dqjnzfsp6/image/upload/v1708818207/turkish-black.jpg',
-    race: 'Van Turco',
+    race: 'Van-Turco',
   },
   {
     name: 'Tomás',
@@ -45,7 +45,7 @@ const cats = [
     age: 3,
     gender: 'Macho',
     img: 'https://res.cloudinary.com/dqjnzfsp6/image/upload/v1708818206/turkish-gray.jpg',
-    race: 'Van Turco',
+    race: 'Van-Turco',
   },
   {
     name: 'Atenea',
@@ -109,7 +109,7 @@ const cats = [
     age: 3,
     gender: 'Hembra',
     img: 'https://res.cloudinary.com/dqjnzfsp6/image/upload/v1708818205/khao-white.jpg',
-    race: 'Khao Manee',
+    race: 'Khao-Manee',
   },
   {
     name: 'León',
@@ -117,6 +117,6 @@ const cats = [
     age: 3,
     gender: 'Macho',
     img: 'https://res.cloudinary.com/dqjnzfsp6/image/upload/v1708818205/khao-brown.jpg',
-    race: 'Khao Manee',
+    race: 'Khao-Manee',
   },
 ]
