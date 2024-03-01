@@ -1,25 +1,35 @@
-// Variables
+// VARIABLES
 // Asignando elementos a las variables.
 const catsCard = document.querySelector('#cats-card');
+const radioFemale = document.querySelector('#radio-female');
+const radioMale = document.querySelector('#radio-male');
 const ageSelectMin = document.querySelector('#age-select-min');
 const ageSelectMax = document.querySelector('#age-select-max');
 const colorSelect = document.querySelector('#color-select');
 const raceContainer = document.querySelector('#race-container');
 
-const datosBusqueda = {
-  marca: '',
-  year: '',
-  minimo: '',
-  maximo: '',
-  puertas: '',
-  transmision: '',
+const filterObj = {
+  gender: '',
+  ageMin: '',
+  ageMax: '',
   color: '',
-
-
+  race: '',
 };
 
-
+// Cargar el HTML.
 document.addEventListener('DOMContentLoaded', () => {
+
+  showCats(cats);
+  uploadAge(cats);
+  uploadColor(cats);
+  uploadRace(cats);
+
+});
+
+// Función para mostrar los gatos desde 'db.js' en la tarjeta de catálogo.
+function showCats(cats) {
+
+  limpiarHTML(); // Eliminar el HTML previo
 
   // Utilizo el método <.map> para iterar sobre el arreglo de objetos 'cats' y poder generar varias plantillas HTML para cada gato.
   const uploadCats = cats.map(pizza => {
@@ -64,13 +74,18 @@ document.addEventListener('DOMContentLoaded', () => {
   // Inserto las plantillas en el elemento HTML con el id 'cats-card' mediante innerHTML.
   catsCard.innerHTML = uploadCats.join('');
 
-  uploadAge();
-  uploadColor();
-  uploadRace();
+};
 
-});
+function limpiarHTML() {
+  
+  while(catsCard.firstChild) {
+    catsCard.removeChild(catsCard.firstChild);
+  };
 
-function uploadAge() {
+};
+
+// Función para cargar las edades desde 'db.js' en el formulario -> offcanvas.
+function uploadAge(cats) {
 
   const onlyAge = [...new Set(cats.map(cat => cat.age))];
 
@@ -90,7 +105,8 @@ function uploadAge() {
 
 };
 
-function uploadColor() {
+// Función para cargar los colores desde 'db.js' en el formulario -> offcanvas.
+function uploadColor(cats) {
 
   const onlyColor = [...new Set(cats.map(cat => cat.color))];
 
@@ -103,40 +119,148 @@ function uploadColor() {
 
 };
 
-function uploadRace() {
+// Función para cargar las razas desde 'db.js' en el formulario -> offcanvas.
+function uploadRace(cats) {
 
   const onlyRace = [...new Set(cats.map(cat => cat.race))];
 
-  // Crear elementos input y label para cada raza única y agregarlos al contenedor
+  // Crear elementos input y label para cada raza única y agregarlos al contenedor.
   onlyRace.forEach(catRace => {
     
-    // Crear input de tipo checkbox
+    // Crear input de tipo checkbox.
     const checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
     checkbox.value = catRace;
-    checkbox.id = catRace.toLowerCase(); // Establecer el id del input
+    checkbox.id = catRace.toLowerCase(); // Establecer el id del input.
 
-    // Crear label asociado al input
+    // Crear label asociado al input.
     const label = document.createElement('label');
     label.textContent = catRace;
-    label.htmlFor = catRace.toLowerCase(); // Asociar el label con el input
+    label.htmlFor = catRace.toLowerCase(); // Asociar el label con el input.
 
-    // Agregar checkbox y label al contenedor
+    // Agregar checkbox y label al contenedor.
     raceContainer.appendChild(checkbox);
     raceContainer.appendChild(label);
 
-    // Agregar un salto de línea para separar las opciones (opcional)
+    // Agregar un salto de línea para separar las opciones.
     raceContainer.appendChild(document.createElement('br'));
 
   });
 
 };
 
-colorSelect.addEventListener('change', (e) => {
+//EVENTOS
+// Estos eventos ayudarán a obtener el valor que seleccione el usuario.
+radioFemale.addEventListener('change', (e) => {
 
-  datosBusqueda.color = e.target.value;
+  filterObj.gender = e.target.value;
 
-  console.log(datosBusqueda)
-
+  filterCats();
 
 });
+
+radioMale.addEventListener('change', (e) => {
+
+  filterObj.gender = e.target.value;
+
+  filterCats();
+
+});
+
+ageSelectMin.addEventListener('change', (e) => {
+
+  filterObj.ageMin = e.target.value;
+
+  filterCats();
+
+});
+
+ageSelectMax.addEventListener('change', (e) => {
+
+  filterObj.ageMax = e.target.value;
+
+  filterCats();
+
+});
+
+colorSelect.addEventListener('change', (e) => {
+
+  filterObj.color = e.target.value;
+
+  filterCats();
+
+});
+
+raceContainer.addEventListener('change', (e) => { // ************ NO FUNCIONA PORQUE LOS CHECKBOX NO SON INPUT DE
+// Función que se encarga de filtrar los gatos según la información introducida en los campos de formulario
+
+  filterObj.race = e.target.value;
+
+  filterCats();
+
+});
+
+// Funcion que filtra en base a la búsqueda.
+function filterCats() {
+  
+  // Función de alto nivel; es decir, funciones que toman otras funciones.
+  const result = cats.filter( filterGender ).filter( filterAgeMin ).filter( filterAgeMax ).filter( filterColor );
+
+  if(result.length) {
+    showCats(result);
+  } else {
+    console.log( 'No hay coincidencias' );
+    // notShowCats();
+  };
+
+};
+
+// Funcion que filtra el género del gato.
+function filterGender(cat) {
+
+  const { gender } = filterObj
+  
+  if(gender) {
+    return cat.gender === gender
+  }
+  return cat;
+
+};
+
+// Funcion que filtra la edad mínima del gato.
+function filterAgeMin(cat) {
+
+  const { ageMin } = filterObj;
+  
+  if(ageMin) {
+    // return cat.age >= parseInt(ageMin);
+    return cat.age >= ageMin;
+  }
+  return cat;
+
+};
+
+// Funcion que filtra la edad máxima del gato.
+function filterAgeMax(cat) {
+  
+  const { ageMax } = filterObj;
+  
+  if(ageMax) {
+    // return cat.age <= parseInt(ageMax);
+    return cat.age <= ageMax;
+  }
+  return cat;
+
+};
+
+// Funcion que filtra el color del gato.
+function filterColor(cat) {
+  
+  const { color } = filterObj;
+  
+  if(color) {
+    return cat.color === color;
+  }
+  return cat;
+  
+};
