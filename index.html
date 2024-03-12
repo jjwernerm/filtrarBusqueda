@@ -30,8 +30,8 @@
       </div>
       <div class="col text-center text-white text-decoration-underline">
         <div class="rounded-pill gradient">
-          <span class="logo-font fst-italic">Adopt</span> <i class="fa-solid fa-cat"></i><span
-            class="logo-font fst-italic">me</span>
+          <span class="logo-font fst-italic logo-font-ppal">Adopt</span> <i class="fa-solid fa-cat fa-cat-ppal"></i><span
+            class="logo-font fst-italic logo-font-ppal">me</span>
         </div>
       </div>
     </div>
@@ -70,8 +70,8 @@
     <div class="offcanvas-header">
       <div class="col text-center text-white text-decoration-underline">
         <div class="rounded-pill gradient">
-          <span class="logo-font fst-italic">Adopt</span> <i class="fa-solid fa-cat"></i><span
-            class="logo-font fst-italic">me</span>
+          <span class="logo-font fst-italic logo-font-ppal">Adopt</span> <i class="fa-solid fa-cat fa-cat-ppal"></i><span
+            class="logo-font fst-italic logo-font-ppal">me</span>
         </div>
       </div>
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -119,6 +119,19 @@
           </select>
         </div>
       </div>
+      <br>
+      <div class="row ms-1">
+        <div class="col">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="all-age" checked>
+            <label class="form-check-label" for="all-age">
+              Todas las edades
+            </label>
+          </div>
+        </div>
+      </div>
+      <br>
+      <p class="text-center" id="msg-age"></p>
       <hr />
 
       <!-- form-select COLOR -->
@@ -138,31 +151,41 @@
         <p class="text-decoration-underline fw-bold">Raza</p>
         <div class="col">
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
-            <label class="form-check-label" for="flexCheckDefault">
+            <input class="form-check-input" type="checkbox" value="" id="all-race" checked>
+            <label class="form-check-label" for="all-race">
               Todas las razas
             </label>
           </div>
         </div>
       </div>
-      
+
       <div class="row ms-1">
         <div class="col">
-          <div class="form-check" id="race-container">
+          <div class="form-check" id="race-check">
             <!-- CHECK javascript -->
           </div>
         </div>
       </div>
 
-
-
-
-
-    
     </div>
-  
-  
-  
+
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="modal-title fs-5" id="exampleModalLabel">
+            <span class="logo-font fst-italic">Adopt</span> <i class="fa-solid fa-cat"></i><span
+              class="logo-font fst-italic">me</span>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center">...</div>
+        <div class=" text-center mb-3"><i class="fa-solid fa-face-sad-tear fs-1 text-warning"></i>
+      </div>
+    </div>
   </div>
 
 
